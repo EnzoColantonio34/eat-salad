@@ -38,9 +38,9 @@ export default function ListOfIngredientsPerType({
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="ingredient-list">
       {ingredients.map((ingredient) => (
-        <label key={ingredient} className="flex items-center space-x-3 p-3 bg-white rounded-lg border-2 border-gray-200 hover:border-green-300 transition-colors cursor-pointer">
+        <label key={ingredient} className="ingredient-option">
           <input
             type="radio"
             name={type}
@@ -48,9 +48,8 @@ export default function ListOfIngredientsPerType({
             checked={selectedValue === ingredient}
             onChange={(e) => onSelect(e.target.value)}
             required
-            className="w-4 h-4 text-green-600 border-gray-300 focus:ring-green-500"
           />
-          <span className="text-gray-800 capitalize font-medium">{ingredient}</span>
+          <span className="ingredient-name">{ingredient}</span>
         </label>
       ))}
     </div>
