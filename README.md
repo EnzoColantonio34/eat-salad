@@ -13,25 +13,25 @@ Une application web moderne développée avec Next.js 15 permettant aux utilisat
 ## 📸 Aperçu de l'application
 
 ### Page d'accueil
-![Page d'accueil](images/screenshots/Accueil.png)
+![Page d'accueil](public/images/screenshots/Accueil.png)
 - Interface moderne avec hero section
 - Logo et image de salade Caesar attractive
 - Call-to-action vers le menu
 
 ### Menu des salades
-![Menu](images/screenshots/Menu.png)
+![Menu](public/images/screenshots/Menu.png)
 - Grille responsive de toutes les salades disponibles
 - Filtrage par catégories (salades, plats chauds, etc.)
 - Cards avec images et descriptions
 
 ### Créateur de salade personnalisée
-![MakeYourOwnSalad](images/screenshots/MakeYourSalad.png)
+![MakeYourOwnSalad](public/images/screenshots/MakeYourSalad.png)
 - Interface en 3 étapes intuitives
 - Sélection d'ingrédients par catégorie
 - Validation temps réel et soumission
 
 ### Recettes spéciales
-![Recettes](images/screenshots/Recette.png)
+![Recettes](public/images/screenshots/Recette.png)
 - Collection de recettes avec images
 - Informations détaillées (calories, difficulté, temps)
 - Navigation vers pages de détail
