@@ -8,30 +8,30 @@
 
 Une application web moderne développée avec Next.js 15 permettant aux utilisateurs de découvrir des recettes de salades, parcourir un menu et composer leurs propres salades personnalisées.
 
-![Logo Eat Salad](public/images/menu/logo-eat.png)
+![Logo Eat Salad](images/menu/logo-eat.png)
 
 ## 📸 Aperçu de l'application
 
 ### Page d'accueil
-![Page d'accueil](public/images/screenshots/Accueil.png)
+![Page d'accueil](screenshots/Accueil.png)
 - Interface moderne avec hero section
 - Logo et image de salade Caesar attractive
 - Call-to-action vers le menu
 
 ### Menu des salades
-![Menu](public/images/screenshots/Menu.png)
+![Menu](screenshots/Menu.png)
 - Grille responsive de toutes les salades disponibles
 - Filtrage par catégories (salades, plats chauds, etc.)
 - Cards avec images et descriptions
 
 ### Créateur de salade personnalisée
-![MakeYourOwnSalad](public/images/screenshots/MakeYourSalad.png)
+![MakeYourOwnSalad](screenshots/MakeYourSalad.png)
 - Interface en 3 étapes intuitives
 - Sélection d'ingrédients par catégorie
 - Validation temps réel et soumission
 
 ### Recettes spéciales
-![MakeYourOwnSalad](public/images/screenshots/Recette.png)
+![Recettes](screenshots/Recette.png)
 - Collection de recettes avec images
 - Informations détaillées (calories, difficulté, temps)
 - Navigation vers pages de détail
