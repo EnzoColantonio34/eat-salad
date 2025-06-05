@@ -7,7 +7,7 @@ export default function Home() {
       <div className="flex-1 flex flex-col md:flex-row items-center justify-center gap-6">
         <div className="bg-white rounded-full shadow-md p-6 flex items-center justify-center">
           <Image
-            src="/logo-eat.png"
+            src="/images/menu/logo-eat.png"
             alt="Logo Eat Salad"
             width={100}
             height={50}
@@ -16,7 +16,7 @@ export default function Home() {
         </div>
         <div className="relative">
           <Image
-            src="/chicken-caesar-salad.jpeg"
+            src="/images/menu/chicken-caesar-salad.jpeg"
             alt="Salade Caesar au poulet"
             width={340}
             height={340}
