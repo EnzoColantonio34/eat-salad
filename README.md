@@ -98,7 +98,7 @@ Une application web moderne développée avec Next.js 15 permettant aux utilisat
 ### Installation
 ```bash
 # Cloner le repository
-git clone [votre-repo]
+git clone https://github.com/EnzoColantonio34/eat-salad
 cd eat-salad
 
 # Installer les dépendances
