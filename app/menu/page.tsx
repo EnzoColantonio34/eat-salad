@@ -1,27 +1,45 @@
 import FusionCollection from "fusionable/FusionCollection";
 import DishItem from "../../component/DishItem";
-import { Dish } from "../../types/dish";
-import fs from "fs";
-import path from "path";
+
+interface Dish {
+  title: string;
+  category: string;
+  image: string;
+  slug: string;
+}
 
 const getDishes = (): Dish[] => {
   const collection = new FusionCollection()
     .loadFromDir('content/menu-offer/');
   
-  return collection.getItemsArray().map((dish: any) => {
-    const slug = dish.__filename?.replace(/\.md$/, "") || "";
-    let image = `/images/menu/${slug}.jpg`;
-    const imagePath = path.join(process.cwd(), "public", "images", "menu", `${slug}.jpg`);
-    if (!fs.existsSync(imagePath)) {
-      image = "/images/menu/no-image.png";
+  const items = collection.getItemsArray();
+  
+  // Debug: afficher la structure des données
+  console.log('Nombre d\'items:', items.length);
+  if (items.length > 0) {
+    console.log('Structure du premier item:', items[0]);
+    console.log('Clés disponibles:', Object.keys(items[0]));
+    if (items[0].fields) {
+      console.log('Fields du premier item:', items[0].fields);
     }
+  }
+  
+  return items.map((dish: any) => {
+    // Les données sont dans la propriété 'fields' de chaque objet
+    const fields = dish.fields || {};
     
-    return {
-      title: dish.title || "Sans titre",
-      category: dish.category || "Non catégorisé",
-      image,
-      slug: `/menu/${dish.type || 'salads'}/${slug}`
+    console.log('Mapping dish:', dish.name, 'fields:', fields);
+    
+    const mappedDish = {
+      title: fields.title || "Sans titre",
+      category: fields.category || "salads",
+      image: fields.imageSrc ? `/images/menu/${fields.imageSrc}` : "/images/menu/no-image.png",
+      slug: `/menu/${fields.category || 'salads'}/${fields.slug || dish.name}`
     };
+    
+    console.log('Mapped dish:', mappedDish);
+    
+    return mappedDish;
   });
 }
 
