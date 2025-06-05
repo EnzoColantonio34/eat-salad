@@ -1,10 +1,8 @@
-// api/ingredients/route.tsx
-
 import type { NextRequest } from "next/server";
 
 export async function GET(
   request: NextRequest,
-  {params} : {params: Promise<{slug: string}>} //facultatif
+  {params} : {params: Promise<{slug: string}>}
 ) {
 
   const searchParams = request.nextUrl.searchParams
