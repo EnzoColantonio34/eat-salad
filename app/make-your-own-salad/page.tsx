@@ -91,22 +91,22 @@ export default function MakeYourOwnSaladPage() {
             <h4 className="text-green-800 font-semibold text-center text-lg mb-4">
               📋 Résumé de votre salade
             </h4>
-            <div className="space-y-3">
-              <div className="flex items-center p-3 bg-green-50 rounded-lg">
+            <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex items-center flex-1 p-3 bg-green-50 rounded-lg">
                 <span className="mr-2">🥗</span>
                 <strong>Légume :</strong>
                 <span className="ml-2 capitalize">
                   {selectedVeggie}
                 </span>
               </div>
-              <div className="flex items-center p-3 bg-green-50 rounded-lg">
+              <div className="flex items-center flex-1 p-3 bg-green-50 rounded-lg">
                 <span className="mr-2">🥩</span>
                 <strong>Protéine :</strong>
                 <span className="ml-2 capitalize">
                   {selectedProtein}
                 </span>
               </div>
-              <div className="flex items-center p-3 bg-green-50 rounded-lg">
+              <div className="flex items-center flex-1 p-3 bg-green-50 rounded-lg">
                 <span className="mr-2">🍯</span>
                 <strong>Sauce :</strong>
                 <span className="ml-2 capitalize">
