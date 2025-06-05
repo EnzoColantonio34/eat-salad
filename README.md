@@ -8,7 +8,7 @@
 
 Une application web moderne développée avec Next.js 15 permettant aux utilisateurs de découvrir des recettes de salades, parcourir un menu et composer leurs propres salades personnalisées.
 
-![Logo Eat Salad](images/menu/logo-eat.png)
+![Logo Eat Salad](public/images/menu/logo-eat.png)
 
 ## 📸 Aperçu de l'application
 
