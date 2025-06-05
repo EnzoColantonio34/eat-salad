@@ -16,54 +16,20 @@ export default function MakeYourOwnSaladPage() {
   const isFormValid = selectedVeggie && selectedProtein && selectedSauce;
 
   return (
-    <main style={{ 
-      maxWidth: '900px', 
-      margin: '0 auto', 
-      padding: '2rem',
-      background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
-      minHeight: '100vh',
-      fontFamily: 'Arial, sans-serif'
-    }}>
-      <h1 style={{ 
-        textAlign: 'center', 
-        color: '#2c5530', 
-        marginBottom: '1rem',
-        fontSize: '2.5rem'
-      }}>
-        Composer votre salade
-      </h1>
-      <p style={{ 
-        textAlign: 'center', 
-        color: '#555', 
-        fontSize: '1.1rem',
-        marginBottom: '2rem'
-      }}>
-        Suivez les 3 étapes pour créer votre salade personnalisée :
-      </p>
+    <div className="max-w-4xl mx-auto">
+      <div className="text-center mb-8">
+        <h1 className="text-3xl font-bold text-gray-900 mb-4">
+          Composer votre salade
+        </h1>
+        <p className="text-lg text-gray-700">
+          Suivez les 3 étapes pour créer votre salade personnalisée
+        </p>
+      </div>
 
-      <form action={formAction} style={{
-        background: 'white',
-        padding: '2.5rem',
-        borderRadius: '12px',
-        margin: '2rem 0',
-        boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
-        border: '1px solid #e0e0e0'
-      }}>
+      <form action={formAction} className="bg-white rounded-xl shadow-lg p-8 space-y-8">
         {/* Étape 1: Choisir un légume */}
-        <div style={{
-          marginBottom: '2.5rem',
-          padding: '2rem',
-          background: '#fafafa',
-          borderRadius: '10px',
-          borderLeft: '4px solid #6b8e23'
-        }}>
-          <h2 style={{
-            color: '#2c5530',
-            marginBottom: '1.5rem',
-            fontSize: '1.5rem',
-            borderBottom: '2px solid #6b8e23',
-            paddingBottom: '0.75rem'
-          }}>
+        <div className="bg-green-50 rounded-lg p-6 border-l-4 border-green-600">
+          <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-green-600">
             🥗 Étape 1 : Choisissez votre légume
           </h2>
           <ListOfIngredientsPerType 
@@ -75,20 +41,8 @@ export default function MakeYourOwnSaladPage() {
         </div>
 
         {/* Étape 2: Choisir une protéine */}
-        <div style={{
-          marginBottom: '2.5rem',
-          padding: '2rem',
-          background: '#fafafa',
-          borderRadius: '10px',
-          borderLeft: '4px solid #6b8e23'
-        }}>
-          <h2 style={{
-            color: '#2c5530',
-            marginBottom: '1.5rem',
-            fontSize: '1.5rem',
-            borderBottom: '2px solid #6b8e23',
-            paddingBottom: '0.75rem'
-          }}>
+        <div className="bg-green-50 rounded-lg p-6 border-l-4 border-green-600">
+          <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-green-600">
             🥩 Étape 2 : Choisissez votre protéine
           </h2>
           <ListOfIngredientsPerType 
@@ -100,20 +54,8 @@ export default function MakeYourOwnSaladPage() {
         </div>
 
         {/* Étape 3: Choisir une sauce */}
-        <div style={{
-          marginBottom: '2.5rem',
-          padding: '2rem',
-          background: '#fafafa',
-          borderRadius: '10px',
-          borderLeft: '4px solid #6b8e23'
-        }}>
-          <h2 style={{
-            color: '#2c5530',
-            marginBottom: '1.5rem',
-            fontSize: '1.5rem',
-            borderBottom: '2px solid #6b8e23',
-            paddingBottom: '0.75rem'
-          }}>
+        <div className="bg-green-50 rounded-lg p-6 border-l-4 border-green-600">
+          <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-green-600">
             🍯 Étape 3 : Choisissez votre sauce
           </h2>
           <ListOfIngredientsPerType 
@@ -128,22 +70,11 @@ export default function MakeYourOwnSaladPage() {
         <button 
           type="submit" 
           disabled={!isFormValid || isPending}
-          style={{
-            background: !isFormValid || isPending 
-              ? 'linear-gradient(135deg, #cccccc 0%, #999999 100%)'
-              : 'linear-gradient(135deg, #6b8e23 0%, #5a7a1f 100%)',
-            color: 'white',
-            padding: '1.25rem 2.5rem',
-            border: 'none',
-            borderRadius: '8px',
-            fontSize: '1.2rem',
-            fontWeight: '600',
-            cursor: !isFormValid || isPending ? 'not-allowed' : 'pointer',
-            width: '100%',
-            textTransform: 'uppercase',
-            letterSpacing: '1px',
-            transition: 'all 0.3s ease'
-          }}
+          className={`w-full py-4 px-8 rounded-lg text-lg font-semibold uppercase tracking-wide transition-colors duration-300 ${
+            !isFormValid || isPending 
+              ? 'bg-gray-400 text-gray-200 cursor-not-allowed'
+              : 'bg-green-600 hover:bg-green-700 text-white cursor-pointer'
+          }`}
         >
           {isPending ? "Validation en cours..." : "Envoyer votre commande"}
         </button>
@@ -151,74 +82,34 @@ export default function MakeYourOwnSaladPage() {
 
       {/* Affichage du statut de la commande */}
       {state.orderStatus && (
-        <div style={{
-          background: 'linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%)',
-          border: '2px solid #6b8e23',
-          color: '#155724',
-          padding: '1.5rem',
-          borderRadius: '10px',
-          marginTop: '1.5rem',
-          textAlign: 'center'
-        }}>
-          <h3>✅ {state.message}</h3>
-          <p>Numéro de commande : <strong>{state.orderNumber}</strong></p>
+        <div className="bg-green-100 border-2 border-green-600 text-green-800 p-6 rounded-lg mt-6 text-center">
+          <h3 className="text-lg font-semibold mb-2">✅ {state.message}</h3>
+          <p className="mb-4">Numéro de commande : <strong>{state.orderNumber}</strong></p>
           
           {/* Résumé de la commande */}
-          <div style={{
-            background: 'rgba(255, 255, 255, 0.7)',
-            padding: '1.5rem',
-            borderRadius: '8px',
-            marginTop: '1.5rem',
-            textAlign: 'left'
-          }}>
-            <h4 style={{
-              color: '#2c5530',
-              marginBottom: '1rem',
-              textAlign: 'center',
-              fontSize: '1.2rem'
-            }}>
+          <div className="bg-white bg-opacity-70 p-6 rounded-lg mt-6 text-left">
+            <h4 className="text-green-800 font-semibold text-center text-lg mb-4">
               📋 Résumé de votre salade
             </h4>
-            <div style={{
-              display: 'grid',
-              gap: '0.75rem'
-            }}>
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                padding: '0.5rem',
-                background: 'rgba(107, 142, 35, 0.1)',
-                borderRadius: '6px'
-              }}>
-                <span style={{ marginRight: '0.5rem' }}>🥗</span>
+            <div className="space-y-3">
+              <div className="flex items-center p-3 bg-green-50 rounded-lg">
+                <span className="mr-2">🥗</span>
                 <strong>Légume :</strong>
-                <span style={{ marginLeft: '0.5rem', textTransform: 'capitalize' }}>
+                <span className="ml-2 capitalize">
                   {selectedVeggie}
                 </span>
               </div>
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                padding: '0.5rem',
-                background: 'rgba(107, 142, 35, 0.1)',
-                borderRadius: '6px'
-              }}>
-                <span style={{ marginRight: '0.5rem' }}>🥩</span>
+              <div className="flex items-center p-3 bg-green-50 rounded-lg">
+                <span className="mr-2">🥩</span>
                 <strong>Protéine :</strong>
-                <span style={{ marginLeft: '0.5rem', textTransform: 'capitalize' }}>
+                <span className="ml-2 capitalize">
                   {selectedProtein}
                 </span>
               </div>
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                padding: '0.5rem',
-                background: 'rgba(107, 142, 35, 0.1)',
-                borderRadius: '6px'
-              }}>
-                <span style={{ marginRight: '0.5rem' }}>🍯</span>
+              <div className="flex items-center p-3 bg-green-50 rounded-lg">
+                <span className="mr-2">🍯</span>
                 <strong>Sauce :</strong>
-                <span style={{ marginLeft: '0.5rem', textTransform: 'capitalize' }}>
+                <span className="ml-2 capitalize">
                   {selectedSauce}
                 </span>
               </div>
@@ -228,18 +119,10 @@ export default function MakeYourOwnSaladPage() {
       )}
 
       {state.orderStatus === false && state.message && (
-        <div style={{
-          background: 'linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%)',
-          border: '2px solid #dc3545',
-          color: '#721c24',
-          padding: '1.5rem',
-          borderRadius: '10px',
-          marginTop: '1.5rem',
-          textAlign: 'center'
-        }}>
-          <h3>❌ {state.message}</h3>
+        <div className="bg-red-100 border-2 border-red-500 text-red-800 p-6 rounded-lg mt-6 text-center">
+          <h3 className="text-lg font-semibold">❌ {state.message}</h3>
         </div>
       )}
-    </main>
+    </div>
   );
 }
