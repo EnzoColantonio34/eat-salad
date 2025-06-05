@@ -48,3 +48,50 @@ body {
     font-size: var(--text-2xl);
   }
 }
+
+/* Styles pour le composant de création de salade */
+.ingredient-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.ingredient-option {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.ingredient-option:hover {
+  border-color: #6b8e23;
+  background-color: #f0f8e8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.ingredient-option input[type="radio"] {
+  margin-right: 0.75rem;
+  transform: scale(1.2);
+}
+
+.ingredient-option input[type="radio"]:checked + .ingredient-name {
+  font-weight: bold;
+  color: #6b8e23;
+}
+
+.ingredient-option:has(input[type="radio"]:checked) {
+  border-color: #6b8e23;
+  background-color: #e8f5e8;
+  box-shadow: 0 4px 12px rgba(107, 142, 35, 0.2);
+}
+
+.ingredient-name {
+  text-transform: capitalize;
+  font-size: 1rem;
+}
